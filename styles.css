@@ -1,0 +1,30 @@
+body,html{
+    height: 100%;
+    margin: 0;
+}
+
+
+.main_container{
+    margin: 0;
+    height: 100%;
+    display: grid;
+    /* background-color: rgb(217, 164, 164); */
+    grid-template-rows: 1fr 9fr ;
+}
+
+h1{ 
+    text-transform: uppercase;
+    height: 100%;
+    /* margin: 10px; */
+    background: rgb(210, 122, 122);
+    text-align: center;
+    color: wheat;
+    margin: 0;
+    align-self: center;
+    padding-top: 40px;
+}
+
+.cards_container{
+    background-color: rgb(217, 164, 164);
+
+}
