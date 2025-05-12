@@ -29,6 +29,7 @@ addBookToLibrary("The Lord of the Rings", "J.R.R. Tolkien", 1178, false);
 addBookToLibrary("Jane Eyre", "Charlotte Brontë", 500, true);
 addBookToLibrary("The Chronicles of Narnia", "C.S. Lewis", 767, false);
 addBookToLibrary("Frankenstein", "Mary Shelley", 280, true);
+
 // displayBookslog(myLibrary);
 displayBooks(myLibrary);
 
@@ -89,3 +90,26 @@ function delete_book_from_library(book) {
 }
 
 displayBooks(myLibrary);
+
+const add_btn = document.querySelector("svg");
+const popup = document.querySelector(".popup");
+const blur_bg = document.querySelector(".main_container");
+add_btn.addEventListener("click",() => 
+{
+    popup.classList.toggle("hidden");
+    add_btn.classList.toggle("red_cross");
+    blur_bg.classList.toggle("blur");
+    
+});
+
+const form = document.querySelector("form");
+form.addEventListener("submit",(event)=>
+{   event.preventDefault();
+    addBookToLibrary(form.elements["title"].value,form.elements["author"].value,form.elements["pages"].value,form.elements["read_status"].value);
+    displayBooks(myLibrary);
+    popup.classList.toggle("hidden");
+    blur_bg.classList.toggle("blur");
+    add_btn.classList.toggle("red_cross");
+    form.reset();
+}
+)

@@ -1,6 +1,7 @@
 body,html{
     height: 100%;
     margin: 0;
+    background: rgb(210, 122, 122);;
 }
 
 
@@ -10,9 +11,12 @@ body,html{
     display: grid;
     /* background-color: rgb(217, 164, 164); */
     grid-template-rows: 1fr 9fr ;
+    position: relative;
+    z-index: 1000;
 }
 
 h1{ 
+    user-select: none;
     text-transform: uppercase;
     height: fit-content;
     /* margin: 10px; */
@@ -33,7 +37,7 @@ h1{
 
 }
 
-.book_card {
+.book_card  {
   background: palegoldenrod;
   border-left: 5px solid orange;
   padding: 15px;
@@ -49,10 +53,12 @@ h1{
 
 }
 .book_card p {
+    user-select: none;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     /* text-align: center; */
 }
 .book_card button{
+    user-select: none;
  /* justify-content:center; */
  border-radius: 8px;
  border: 0px;
@@ -68,19 +74,73 @@ h1{
     margin: 10px;
     background-color: burlywood;
 }
-
+/* version one */
 svg {
-    fill: currentColor;
-    position: absolute;
-    right: 50px;
-    bottom: 15px;
-    
+    fill: rgb(235, 98, 13);
+    position: fixed;
+    top: 90%;
+    left: 95%;
+    z-index: 1001; }
 /* vertical-align:middle; */
 
-}
+
+/* version 2 */
+/* svg {
+    fill: rgb(235, 157, 13);
+    position: absolute;
+    top: 4%;
+    left: 95%;
+    z-index: 1001;}
+/* vertical-align:middle; */
+
 
 svg:hover{
     cursor: pointer;
     scale : 1.09;
     transition: .5s;
+ 
+}
+
+.popup {
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: end;
+    min-width: 200px;  
+    z-index: 2000;
+ 
+}
+
+.popup:hover{
+    scale: 1;
+    transition: none;
+}
+
+.radio{
+text-align: start;
+padding-left: 10px;
+}
+
+.confirm_button {
+    text-align: center;
+}
+
+.hidden{
+    visibility: hidden;
+    /* transition:  ease-in-out; */
+}
+
+.red_cross{
+fill: rgb(185, 30, 30);
+rotate:45deg ;
+transition: .2s;
+/* filter: brightness(50); */
+}
+
+.blur {
+    filter: blur(3px);
+    transition: .1s ease-in-out ;
+    z-index: 1000;
 }
